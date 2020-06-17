@@ -1,4 +1,6 @@
 import React from "react";
+import { Provider } from "unstated";
+import InvoiceContainer from "./containers/InvoiceContainer";
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import HomeScreen from "./components/HomeScreen";
@@ -20,6 +22,11 @@ const AppContainer = createAppContainer(RootStack);
 
 export default class App extends React.Component {
   render() {
-    return <AppContainer />;
+    let globalState = new InvoiceContainer({ initialSeeding: true });
+    return (
+      <Provider inject={[globalState]}>
+        <AppContainer />
+      </Provider>
+    );
   }
 }
