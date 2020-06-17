@@ -15,7 +15,7 @@ class SummaryScreenContent extends React.Component {
           onPress={() => {
             let data = this.props.globalState.state.data;
             data.invoices[1].date = "2/2/2020";
-            this.props.globalState.setState({ data: data });
+            this.props.globalState.setStateAndSave({ data: data });
           }}
         />
       </View>
