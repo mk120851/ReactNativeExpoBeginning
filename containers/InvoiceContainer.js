@@ -13,10 +13,10 @@ export default class InvoiceContainer extends Container {
     };
   }
 
-  getDataFromServer() {
+  getDataFromServer(endpoint) {
     this.setState({ isDataLoading: true });
     axios
-      .get(INVOICE_API_ENDPOINT, { params: {} })
+      .get(endpoint, { timeout: 3000 })
       .then((results) => {
         console.log("HTTP Request succeeded.");
         console.log(results);

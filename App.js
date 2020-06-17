@@ -7,6 +7,7 @@ import { createStackNavigator } from "react-navigation-stack";
 import HomeScreen from "./components/HomeScreen";
 import InvoiceEditScreen from "./components/InvoiceEditScreen";
 import SummaryScreen from "./components/SummaryScreen";
+import BarcodeScannerScreen from "./components/BarcodeScannerScreen";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -15,6 +16,7 @@ const RootStack = createStackNavigator(
     Home: HomeScreen,
     InvoiceEdit: InvoiceEditScreen,
     Summary: SummaryScreen,
+    BarcodeScanner: BarcodeScannerScreen,
   },
   {
     initialRouteName: "Home",
